@@ -1,15 +1,15 @@
 /* ---------------------------------------------------------------------------------------------- 
  * 
  * プログラム概要 ： さくら麻雀(Ver0.1.2：開発版)
- * バージョン     ： 0.1.2.0.219(MJAIログ表示：裏ドラ結果表示)
+ * バージョン     ： 0.1.2.3.237(フレームカウントの分岐条件を変更)
  * プログラム名   ： mjs.exe
  * ファイル名     ： gui.h
  * クラス名       ： MJSGui
  * 処理概要       ： GUI操作クラス
  * Ver0.1.0作成日 ： 2022/05/03 18:50:06
- * 最終更新日     ： 2024/10/30 09:26:27
+ * 最終更新日     ： 2026/05/01 11:25:25
  * 
- * Copyright (c) 2010-2024 Techmilestone, All rights reserved.
+ * Copyright (c) 2010-2026 Techmilestone, All rights reserved.
  * 
  * ---------------------------------------------------------------------------------------------- */
 
@@ -30,10 +30,10 @@
 #define DISP_DEBUG_INFO                 0    // デバグ情報の表示(0:非表示)
 
 // フレームカウント
-#define AUTO_FRAME_COUNT_PLAYING       20    // プレイモードのフレームカウント数
-#define AUTO_FRAME_COUNT_RUNNING        1    // 検証モードのフレームカウント数
 #define AUTO_FRAME_COUNT_CLIENT         5    // クライアントモードのフレームカウント数
 #define AUTO_FRAME_COUNT_CLIENT_SND     5    // 送信時ウエイト用のフレームカウント数
+#define AUTO_FRAME_COUNT_PLAYING       20    // プレイモードのフレームカウント数
+#define AUTO_FRAME_COUNT_RUNNING        0    // 検証モードのフレームカウント数
 #define AUTO_FRAME_COUNT_AUTO_TSUMO    20    // リーチ時のオート自摸のフレームカウント数
 #define AUTO_FRAME_COUNT_RESULT       150    // 結果表示等のウェイト用フレームカウント数
 

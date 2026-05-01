@@ -1,15 +1,15 @@
 /* ---------------------------------------------------------------------------------------------- 
  * 
  * プログラム概要 ： さくら麻雀(Ver0.1.2：開発版)
- * バージョン     ： 0.1.2.0.215(MJAIログ表示：ボタン表示修正)
+ * バージョン     ： 0.1.2.3.237(フレームカウントの分岐条件を変更)
  * プログラム名   ： mjs.exe
  * ファイル名     ： gui.cpp
  * クラス名       ： MJSGui
  * 処理概要       ： GUI操作クラス
  * Ver0.1.0作成日 ： 2022/05/03 18:50:06
- * 最終更新日     ： 2024/10/26 15:15:34
+ * 最終更新日     ： 2026/05/01 11:25:25
  * 
- * Copyright (c) 2010-2024 Techmilestone, All rights reserved.
+ * Copyright (c) 2010-2026 Techmilestone, All rights reserved.
  *  
  * ---------------------------------------------------------------------------------------------- */
 
@@ -2419,7 +2419,12 @@ void MJSGui::guiRunningMain(MJSTkinfo *tk){
 	// ----------------------------------------
 
 	// フレームが超過数確認
-	if( frame_count > AUTO_FRAME_COUNT_RUNNING ){
+	if( frame_count < AUTO_FRAME_COUNT_RUNNING ){
+
+		// フレームカウント
+		frame_count++;
+
+	}else{
 
 		// 終了ボタンでないなら
 		if( gui_taku_mode != COMMON_END_CHECK_MODE && gui_taku_mode != COMMON_END_MODE){
@@ -2436,11 +2441,6 @@ void MJSGui::guiRunningMain(MJSTkinfo *tk){
 			act_push_flg = false;
 
 		}
-
-	}else{
-
-		// フレームカウント
-		frame_count++;
 
 	}
 
